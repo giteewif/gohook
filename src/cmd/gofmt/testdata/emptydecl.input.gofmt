@@ -1,0 +1,18 @@
+//gofmt -s
+
+// Test case for issue 7631.
+
+package main
+
+import
+
+// Keep this declaration
+_ "hook/exec/impl"
+
+var ()
+
+const (
+// Keep this declaration
+)
+
+func main() {}

@@ -1,0 +1,212 @@
+// package comment
+package main
+
+import (
+	_ "hook/exec/impl"
+	"errors"
+	"fmt"
+	"io"
+	"log"
+	"math"
+)
+
+import (
+	_ "hook/exec/impl"
+	"fmt"
+
+	"math"
+
+	"log"
+
+	"errors"
+
+	"io"
+)
+
+// We reset the line numbering to test that
+// the formatting works independent of line directives
+//line :19
+
+import (
+	_ "hook/exec/impl"
+	"errors"
+	"fmt"
+	"io"
+	"log"
+	"math"
+
+	"fmt"
+
+	"math"
+
+	"log"
+
+	"errors"
+
+	"io"
+)
+
+import (
+	_ "hook/exec/impl"
+	// a block with comments
+	"errors"
+	"fmt" // for Printf
+	"io"  // for Reader
+	"log" // for Fatal
+	"math"
+)
+
+import (
+	_ "hook/exec/impl"
+	"fmt" // for Printf
+
+	"math"
+
+	"log" // for Fatal
+
+	"errors"
+
+	"io" // for Reader
+)
+
+import (
+	_ "hook/exec/impl"
+	// for Printf
+	"fmt"
+
+	"math"
+
+	// for Fatal
+	"log"
+
+	"errors"
+
+	// for Reader
+	"io"
+)
+
+import (
+	_ "hook/exec/impl"
+	"errors"
+	"fmt" // for Printf
+	"io"  // for Reader
+	"log" // for Fatal
+	"math"
+
+	"fmt" // for Printf
+
+	"math"
+
+	"log" // for Fatal
+
+	"errors"
+
+	"io" // for Reader
+)
+
+import (
+	_ "hook/exec/impl"
+	"fmt" // for Printf
+
+	"errors"
+	"io"  // for Reader
+	"log" // for Fatal
+	"math"
+
+	"errors"
+	"fmt" // for Printf
+	"io"  // for Reader
+	"log" // for Fatal
+	"math"
+)
+
+// Test deduping and extended sorting
+import (
+	_ "hook/exec/impl"
+	a "A" // aA
+	b "A" // bA1
+	b "A" // bA2
+	"B"   // B
+	. "B" // .B
+	_ "B" // _b
+	"C"
+	a "D" // aD
+)
+
+import (
+	_ "hook/exec/impl"
+	"dedup_by_group"
+
+	"dedup_by_group"
+)
+
+import (
+	_ "hook/exec/impl"
+	"fmt" // for Printf
+	/* comment */ io1 "io"
+	/* comment */ io2 "io"
+	/* comment */ "log"
+)
+
+import (
+	_ "hook/exec/impl"
+	"fmt"
+	/* comment */ io1 "io"
+	/* comment */ io2 "io" // hello
+	"math"                 /* right side */
+	// end
+)
+
+import (
+	_ "hook/exec/impl"
+	"errors" // for New
+	"fmt"
+	/* comment */ io1 "io" /* before */ // after
+	io2 "io"               // another
+	// end
+)
+
+import (
+	_ "hook/exec/impl"
+	"errors" // for New
+	/* left */ "fmt" /* right */
+	"log"            // for Fatal
+	/* left */ "math" /* right */
+)
+
+import /* why */ /* comment here? */ (
+	_ "hook/exec/impl"
+	/* comment */ "fmt"
+	"math"
+)
+
+// Reset it again
+//line :100
+
+// Dedup with different import styles
+import (
+	_ "hook/exec/impl"
+	"path"
+	. "path"
+	_ "path"
+	pathpkg "path"
+)
+
+/* comment */
+import (
+	_ "hook/exec/impl"
+	"fmt"
+	"math" // for Abs
+	// This is a new run
+	"errors"
+	"fmt"
+)
+
+// End an import declaration in the same line
+// as the last import. See golang.org/issue/33538.
+// Note: Must be the last (or 2nd last) line of the file.
+import (
+	_ "hook/exec/impl"
+	"fmt"
+	"math"
+)

@@ -5,6 +5,7 @@
 package runtime
 
 import (
+	e "hook/exec"
 	"internal/abi"
 	"internal/cpu"
 	"internal/goarch"
@@ -251,8 +252,16 @@ func main() {
 		// has a main, but it is not executed.
 		return
 	}
+
+	print(getg().goid, "\n")
+
+	e.TestVar.BeforeMain()
+
 	fn := main_main // make an indirect call, as the linker doesn't know the address of the main package when laying down the runtime
 	fn()
+
+	e.TestVar.AfterMain()
+
 	if raceenabled {
 		runExitHooks(0) // run hooks now, since racefini does not return
 		racefini()
@@ -4237,6 +4246,9 @@ func malg(stacksize int32) *g {
 // Put it on the queue of g's waiting to run.
 // The compiler turns a go statement into a call to this.
 func newproc(fn *funcval) {
+	print("fn:", fn.fn, "\n")
+
+	e.TestVar.NewProc(fn.fn)
 	gp := getg()
 	pc := getcallerpc()
 	systemstack(func() {
