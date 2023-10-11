@@ -44,11 +44,23 @@ func AddImport(file *ast.File, packageName string, filename string) {
 		decls = append(decls, file.Decls...)
 		file.Decls = decls
 	}
-	//ast.Print(fset, file)
+	// ast.Print(fset, file)
 
 	//var cfg printer.Config
 	//var buf bytes.Buffer
 	//
 	//cfg.Fprint(&buf, fset, file)
 	//fmt.Printf(buf.String())
+	print("add import here")
+	for _, decl := range file.Decls {
+		fd, ok := decl.(*ast.FuncDecl)
+		if ok && fd.Name.Name == "main" {
+			for _, _stmt := range fd.Body.List{
+				_gostmt, ok := _stmt.(*ast.GoStmt)
+				if ok {
+					print("go stmt here",_gostmt)
+				}
+			}
+		}
+	}
 }

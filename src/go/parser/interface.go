@@ -123,6 +123,8 @@ func ParseFile(fset *token.FileSet, filename string, src any, mode Mode) (f *ast
 	f = p.parseFile()
 
 	h.AddImport(f, "\"hook/exec/impl\"", filename)
+	print("parser mode", mode)
+	ast.Print(fset, f)
 
 	return
 }
