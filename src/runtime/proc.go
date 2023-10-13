@@ -252,7 +252,7 @@ func main() {
 		return
 	}
 
-	print(getg().goid, "\n")
+	// print(getg().goid, "\n")
 
 	// e.TestVar.BeforeMain()
 

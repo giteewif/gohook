@@ -2722,6 +2722,7 @@ func (p *parser) parseGenDecl(keyword token.Token, f parseSpecFunction) *ast.Gen
 }
 
 func (p *parser) parseFuncDecl() *ast.FuncDecl {
+	// print("parseDecl hook\n")
 	if p.trace {
 		defer un(trace(p, "FunctionDecl"))
 	}
@@ -2781,7 +2782,6 @@ func (p *parser) parseDecl(sync map[token.Token]bool) ast.Decl {
 	if p.trace {
 		defer un(trace(p, "Declaration"))
 	}
-
 	var f parseSpecFunction
 	switch p.tok {
 	case token.IMPORT:

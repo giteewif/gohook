@@ -54,6 +54,15 @@ func String(n Node) string {
 	return buf.String()
 }
 
+func String1(n Node) string {
+	var buf strings.Builder
+	_, err := Fprint(&buf, n, 0)
+	if err != nil {
+		fmt.Fprintf(&buf, "<<< ERROR: %s", err)
+	}
+	return buf.String()
+} 
+
 type ctrlSymbol int
 
 const (

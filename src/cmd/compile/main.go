@@ -54,6 +54,7 @@ func main() {
 		os.Exit(2)
 	}
 
+	print("main in main internal\n")
 	gc.Main(archInit)
 	base.Exit(0)
 }

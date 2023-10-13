@@ -57,6 +57,7 @@ func LoadPackage(filenames []string) {
 				defer f.Close()
 
 				p.file, _ = syntax.Parse(fbase, f, p.error, p.pragma, syntax.CheckBranches) // errors are tracked via p.error
+				fmt.Fprint(os.Stdout, syntax.String1(p.file)) 
 			}()
 		}
 	}()

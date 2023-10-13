@@ -11,7 +11,6 @@ import (
 	"errors"
 	"go/ast"
 	"go/token"
-	h "hook/parser"
 	"io"
 	"io/fs"
 	"os"
@@ -122,9 +121,10 @@ func ParseFile(fset *token.FileSet, filename string, src any, mode Mode) (f *ast
 	p.init(fset, filename, text, mode)
 	f = p.parseFile()
 
-	h.AddImport(f, "\"hook/exec/impl\"", filename)
-	print("parser mode", mode)
-	ast.Print(fset, f)
+	// h.AddImport(f, "\"hook/exec/impl\"", filename)
+	// print("parser mode", mode)
+	// print(fset)
+	// ast.Print(fset, f)
 
 	return
 }
